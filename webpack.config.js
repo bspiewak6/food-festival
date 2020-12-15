@@ -1,22 +1,18 @@
-const path = require("path");
-const webpack = require("webpack");
-require("bootstrap");
-
+const path = require('path');
+const webpack = require('webpack');
 module.exports = {
-    entry: "./assets/js/script.js", // webpack looks to start building module
-    output: { 
-        path: path.resolve(__dirname, "dist"), 
-        filename: "main.bundle.js" // location of this file is in the dist folder
+    // webpack looks to start building module
+    entry: './assets/js/script.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'main.bundle.js'
     },
-    plugins:[
+    // re-loading and de-bugging features
+    mode: 'development',
+    plugins: [
         new webpack.ProvidePlugin({
-          $: "jquery",
-          jQuery: "jquery"
-        }),
+            $: 'jquery',
+            jQuery: 'jquery'
+        })
     ],
-    mode: "development" // re-loading and de-bugging features
 };
-
-
-
-
