@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+
 module.exports = {
     // webpack looks to start building module
     entry: './assets/js/script.js',
