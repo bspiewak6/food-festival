@@ -1,5 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+
 module.exports = {
     // webpack looks to start building module
     entry: './assets/js/script.js',
@@ -13,6 +15,9 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'
+        }),
+        new BundleAnalyzerPlugin({
+            analyzerMode: "static", // the report outputs to an HTML file in the dist folder
         })
     ],
 };
